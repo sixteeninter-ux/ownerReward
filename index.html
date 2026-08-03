@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#111111"
+  >
+
+  <title>NC Reward Owner</title>
+
+  <link
+    rel="stylesheet"
+    href="./style.css?v=2"
+  >
+</head>
+
+<body>
+
+  <main class="container">
+
+    <h1>NC Reward Owner</h1>
+
+    <!-- CONNECT WALLET -->
+
+    <button
+      id="connectWalletBtn"
+      type="button"
+    >
+      <span id="connectWalletText">
+        Connect Wallet
+      </span>
+    </button>
+
+
+    <!-- WALLET INFORMATION -->
+
+    <section class="card">
+
+      <h2>Wallet</h2>
+
+      <div class="info">
+        Status:
+        <strong
+          id="walletStatus"
+          class="error"
+        >
+          Not Connected
+        </strong>
+      </div>
+
+      <div class="info">
+        Address:
+        <strong id="walletAddress">
+          -
+        </strong>
+      </div>
+
+      <div class="info">
+        Network:
+        <strong id="networkName">
+          -
+        </strong>
+      </div>
+
+      <div class="info">
+        Access:
+        <strong id="ownerStatus">
+          Not Checked
+        </strong>
+      </div>
+
+    </section>
+
+
+    <!-- APP STATUS -->
+
+    <div
+      id="appStatus"
+      class="status"
+    >
+      กรุณาเชื่อม Owner Wallet
+    </div>
+
+
+    <!-- CURRENT SETTINGS -->
+
+    <section class="card">
+
+      <h2>Current Settings</h2>
+
+      <div class="info">
+        Contract Owner:
+        <strong id="contractOwner">
+          -
+        </strong>
+      </div>
+
+      <div class="info">
+        Reward:
+        <strong id="currentRewardPercent">
+          -
+        </strong>
+      </div>
+
+      <div class="info">
+        Max Upline:
+        <strong id="currentMaxUpline">
+          -
+        </strong>
+      </div>
+
+      <div class="info">
+        Claim Step:
+        <strong id="currentClaimStep">
+          -
+        </strong>
+      </div>
+
+      <div class="info">
+        Sync:
+        <strong id="currentSyncStatus">
+          -
+        </strong>
+      </div>
+
+      <button
+        id="refreshBtn"
+        type="button"
+        disabled
+      >
+        Refresh
+      </button>
+
+    </section>
+
+
+    <!-- RECORD PURCHASE -->
+
+    <section class="card">
+
+      <h2>Record Purchase</h2>
+
+      <label for="buyerAddressInput">
+        Buyer Wallet
+      </label>
+
+      <input
+        id="buyerAddressInput"
+        type="text"
+        placeholder="0x..."
+        autocomplete="off"
+        spellcheck="false"
+      >
+
+      <label for="purchaseAmountInput">
+        Purchase Amount (USDT)
+      </label>
+
+      <input
+        id="purchaseAmountInput"
+        type="number"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+        placeholder="เช่น 100, 500 หรือ 1000"
+      >
+
+      <label for="purchaseReferenceInput">
+        Reference
+      </label>
+
+      <input
+        id="purchaseReferenceInput"
+        type="text"
+        placeholder="เช่น BUY-000001"
+        autocomplete="off"
+        spellcheck="false"
+      >
+
+      <button
+        id="recordPurchaseBtn"
+        type="button"
+        disabled
+      >
+        Record Purchase
+      </button>
+
+      <p class="small">
+        Reference ไม่จำเป็นต้องเป็น Transaction Hash
+        แต่ต้องไม่ซ้ำกับรายการก่อนหน้า
+      </p>
+
+    </section>
+
+
+    <!-- REWARD SETTINGS -->
+
+    <section class="card">
+
+      <h2>Reward Settings</h2>
+
+      <label for="rewardPercentInput">
+        Reward Percentage
+      </label>
+
+      <input
+        id="rewardPercentInput"
+        type="number"
+        min="0.01"
+        max="10000"
+        step="0.01"
+        inputmode="decimal"
+        placeholder="เช่น 100"
+      >
+
+      <button
+        id="setRewardPercentBtn"
+        type="button"
+        disabled
+      >
+        Update Reward
+      </button>
+
+      <hr>
+
+      <label for="maxUplineInput">
+        Maximum Upline Levels
+      </label>
+
+      <input
+        id="maxUplineInput"
+        type="number"
+        min="1"
+        max="500"
+        step="1"
+        inputmode="numeric"
+        placeholder="เช่น 10"
+      >
+
+      <button
+        id="setMaxUplineBtn"
+        type="button"
+        disabled
+      >
+        Update Max Upline
+      </button>
+
+    </section>
+
+
+    <!-- SYNC CONTROL -->
+
+    <section class="card">
+
+      <h2>Sync Control</h2>
+
+      <div class="row">
+
+        <button
+          id="pauseSyncBtn"
+          type="button"
+          disabled
+        >
+          Pause Sync
+        </button>
+
+        <button
+          id="resumeSyncBtn"
+          type="button"
+          disabled
+        >
+          Resume Sync
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- WARNING -->
+
+    <section class="card">
+
+      <h2>ข้อควรระวัง</h2>
+
+      <p class="small">
+        ตรวจสอบ Buyer Wallet, Purchase Amount และ Reference
+        ให้ถูกต้องก่อนยืนยัน เพราะรายการที่บันทึกบน Blockchain
+        ไม่สามารถลบหรือแก้ไขย้อนหลังได้
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    NC Reward Owner · BNB Smart Chain
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <!-- ต้องใช้ UMD เท่านั้น เพื่อให้มีตัวแปร ethers -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js"
+  ></script>
+
+  <script src="./config.js?v=2"></script>
+
+  <script src="./abi.js?v=2"></script>
+
+  <script src="./app.js?v=2"></script>
+
+</body>
+</html>

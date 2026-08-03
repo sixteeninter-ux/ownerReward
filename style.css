@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#111;
+    color:#fff;
+}
+
+.container{
+    max-width:720px;
+    margin:30px auto;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#FFD700;
+    margin-bottom:20px;
+}
+
+.card{
+    background:#1b1b1b;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:18px;
+}
+
+.card h2{
+    color:#FFD700;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#2b2b2b;
+    color:#fff;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border:1px solid #FFD700;
+}
+
+button{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#FFD700;
+    color:#000;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+button:disabled{
+    background:#555;
+    color:#999;
+    cursor:not-allowed;
+}
+
+.row{
+    display:flex;
+    gap:10px;
+}
+
+.row button{
+    flex:1;
+}
+
+.info{
+    margin:8px 0;
+    font-size:15px;
+    word-break:break-word;
+}
+
+.status{
+    text-align:center;
+    margin:15px 0;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.success{
+    color:#00ff80;
+}
+
+.error{
+    color:#ff5555;
+}
+
+.warning{
+    color:#ffb300;
+}
+
+.small{
+    color:#aaa;
+    font-size:12px;
+    margin-top:10px;
+    line-height:18px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #333;
+    margin:18px 0;
+}
+
+.footer{
+    text-align:center;
+    color:#888;
+    padding:25px;
+    font-size:13px;
+}
+
+#connectWalletBtn{
+    margin-bottom:20px;
+}
+
+@media(max-width:768px){
+
+.container{
+    padding:15px;
+}
+
+.card{
+    padding:15px;
+}
+
+button{
+    font-size:15px;
+}
+
+input{
+    font-size:15px;
+}
+
+.row{
+    flex-direction:column;
+}
+
+}

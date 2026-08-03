@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="theme-color"
+content="#111111">
+
+<title>NC Reward Owner</title>
+
+<link
+rel="stylesheet"
+href="./style.css?v=3">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>NC Reward Owner</h1>
+
+<button id="connectWalletBtn">
+<span id="connectWalletText">
+Connect Wallet
+</span>
+</button>
+
+<div id="appStatus" class="status">
+กรุณาเชื่อมกระเป๋า
+</div>
+
+<div class="card">
+
+<h2>Wallet</h2>
+
+<div class="info">
+Status :
+<b id="walletStatus">Not Connected</b>
+</div>
+
+<div class="info">
+Address :
+<b id="walletAddress">-</b>
+</div>
+
+<div class="info">
+Network :
+<b id="networkName">-</b>
+</div>
+
+<div class="info">
+Access :
+<b id="ownerStatus">-</b>
+</div>
+
+<button id="refreshBtn" disabled>
+Refresh
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Reward Core</h2>
+
+<div class="info">
+Owner :
+<b id="contractOwner">-</b>
+</div>
+
+<div class="info">
+Reward :
+<b id="currentRewardPercent">-</b>
+</div>
+
+<div class="info">
+Max Upline :
+<b id="currentMaxUpline">-</b>
+</div>
+
+<div class="info">
+Claim Step :
+<b id="currentClaimStep">-</b>
+</div>
+
+<div class="info">
+Sync :
+<b id="currentSyncStatus">-</b>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Record Purchase</h2>
+
+<label>
+
+Buyer Wallet
+
+</label>
+
+<input
+id="buyerAddressInput"
+type="text"
+placeholder="0x...">
+
+<label>
+
+Purchase Amount (USDT)
+
+</label>
+
+<input
+id="purchaseAmountInput"
+type="number"
+placeholder="1000">
+
+<label>
+
+Transaction Hash
+
+</label>
+
+<input
+id="purchaseReferenceInput"
+type="text"
+placeholder="0x...">
+
+<button
+id="recordPurchaseBtn"
+disabled>
+
+Record Purchase
+
+</button>
+
+<div class="small">
+
+คัดลอกข้อมูลจาก BscScan
+
+<br>
+
+Buyer Wallet
+
+<br>
+
+Purchase Amount
+
+<br>
+
+Transaction Hash
+
+</div>
+
+</div>
+
+<div class="footer">
+
+NC Reward Owner
+
+<br>
+
+BNB Smart Chain
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js"></script>
+
+<script src="./config.js?v=3"></script>
+
+<script src="./abi.js?v=3"></script>
+
+<script src="./app.js?v=3"></script>
+
+</body>
+
+</html>
